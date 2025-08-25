@@ -3,9 +3,9 @@
 authors:
 - family-names: "Martinez"
   given-names: "Jonathan"
-- family-names: "Lisa"
-  given-names: "Mona"
-  orcid: "https://orcid.org/0000-0000-0000-0000"
+- family-names: "Sorrentino"
+  given-names: "Francesco"
+  // orcid: "https://orcid.org/0000-0000-0000-0000"
 title: "Quotient_Network_Expansion_Algorithm"
 // version: 1.0.0
 // doi: 10.5281/zenodo.1234
