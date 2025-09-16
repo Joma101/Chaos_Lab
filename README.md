@@ -24,6 +24,8 @@ The variable "n_user" exists to enable user input for the array "n" for Case II 
 
 FEATURES:
 
+Although the inputs follow standard graph/network notation (V,E,A), our proposed algorithm does not run on this language. It runs on arrays n, s, c, and f translated seamlessly from the tuple, R, then translates back into a node and edge list output along with the expanded network adjacency matrix A.
+
 The script will save the node and edge lists of the expanded network produced toward the end in the working directory, overwriting any previously saved node/edge lists with the same filename.
 
 (Within the script workspace viewed using the MATLAB application) The in-degree of each expanded network node is reported in the variable "in_degree". The index of each element in in_degree same as the index of the corresponding node in the expanded network.
