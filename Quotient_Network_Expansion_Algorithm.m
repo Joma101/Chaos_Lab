@@ -3,15 +3,15 @@ tic
 %% Inputs
 
 V=1:3;
-E=[2 1 1 2 2 2 3 2 2 3 1 3];
-Wadj=[0 3 2 0 0;2 0 1 0 0;0 1 0 0 0;0 0 0 0 0;0 0 0 0 0];
-ntest=0; 
-% Write "0" for "ntest" if minimal expansion is intended; otherwise, enter an array 
+E=[2 1 3 2];
+Qadj=[0 0 0; 1 2 0; 0 1 0];
+n_user=0; 
+% Write "0" for "n_user" if minimal expansion is intended; otherwise, enter an array 
 % with the same # elements as "V" to check for feasibility or to generate non-minimal network.
 
 %% Conversion to script's reading structure
 
-s=diag(Wadj)'; % Create 's' array.
+s=diag(Qadj)'; % Create 's' array.
 c=E;
 for i=1:2:length(E)-1 % Remove self-loops from 'c' array.
     if c(i)==c(i+1)
@@ -27,8 +27,8 @@ end
 c=nonzeros(c)'; % Create 'c' array.
 f=zeros(1,length(c));
 for i=1:2:length(c)
-    f(i)=Wadj(c(i+1),c(i));
-    f(i+1)=Wadj(c(i),c(i+1)); % Create 'f' array.
+    f(i)=Qadj(c(i+1),c(i));
+    f(i+1)=Qadj(c(i),c(i+1)); % Create 'f' array.
 end
 
 % Notes: s = number of self loops per quotient node, f = vector pairs of edge weights.
@@ -58,13 +58,13 @@ end
 
 %% Inputs feasibility
 
-if ntest~=0
-    test=ntest<n;
+if n_user~=0
+    test=n_user<n;
     if sum(test)>0    % If feasibility script is commented out, error message stems from "randperm" functions, indicating the graph is infeasible.
     disp('Graph is infeasible')
     return
     end
-    n=ntest;
+    n=n_user;
 end
 
 %% Step 2 - Assign the non-self-loop edges (random assignment)
