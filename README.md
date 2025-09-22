@@ -24,12 +24,13 @@ The variable "n_user" exists to enable user input for the array "n" for Case II 
 
 FEATURES:
 
-Although the inputs follow standard graph/network notation (V,E,A), our proposed algorithm does not run on this language. It runs on arrays n, s, c, and f translated seamlessly from the tuple, R, then translates back into a node and edge list output along with the expanded network adjacency matrix A.
+1. Although the inputs follow standard graph/network notation (V,E,A), our proposed algorithm does not run on this language. It runs on arrays n, s, c, and f translated seamlessly from the tuple, R, then translates back into a node and edge list output along with the expanded network adjacency matrix A.
 
-The script will save the node and edge lists of the expanded network produced toward the end in the working directory, overwriting any previously saved node/edge lists with the same filename.
+2. The script will save the node and edge lists of the expanded network in the working directory, overwriting any previously saved node/edge lists with the same filename.
 
-(Within the script workspace viewed using the MATLAB application) The in-degree of each expanded network node is reported in the variable "in_degree". The index of each element in in_degree same as the index of the corresponding node in the expanded network.
+3. If a cluster is isolated from its neighbors, the script will ensure there still exists at least one node in the expanded network for that isolated cluster.
 
-The matrix "Gephi_Colors" is an RGB color matrix that can be used to distinguish nodes in different clusters by color, particularly in the Gephi network graphing software. Each row in the matrix corresponds to each element in the input V.
+4. Within the script workspace viewed using the MATLAB application:
+  a. The in-degree of each expanded network node is reported in the variable "in_degree". The index of each element in in_degree same as the index of the corresponding node in the expanded network.
 
-If a cluster is isolated from its neighbors, the script will ensure there still exists at least one node in the expanded network for that isolated cluster.
+  b. The matrix "Gephi_Colors" is an RGB color matrix that can be used to distinguish nodes in different clusters by color, particularly in the Gephi network graphing software. Each row in the matrix corresponds to each element in the input V.
