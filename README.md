@@ -34,7 +34,9 @@ FEATURES
 
 3. If a cluster is isolated from its neighbors, the script will ensure there still exists at least one node in the expanded network for that isolated cluster.
 
-4. Within the script workspace viewed using the MATLAB application:
+4. The algorithm covers edge cases such as cyclic, acyclic, and large expanded networks, depicted by the file titled, "example_cases.png".
+
+5. Within the script workspace viewed using the MATLAB application:
   a. The in-degree of each expanded network node is reported in the variable "in_degree". The index of each element in in_degree same as the index of the corresponding node in the expanded network.
 
   b. The matrix "Gephi_Colors" is an RGB color matrix that can be used to distinguish nodes in different clusters by color, particularly in the Gephi network graphing software. Each row in the matrix corresponds to each element in the input V.
